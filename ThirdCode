@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+string convertToBase(int number, int newBase);
+
+void testConvertToBase() {
+    // Test case 1: Decimal number 123 to base 16 (hexadecimal)
+    assert(convertToBase(123, 16) == "7B");
+
+    // Test case 2: Decimal number 0 to any base (should be "0" in any base)
+    assert(convertToBase(0, 8) == "0");
+    assert(convertToBase(0, 2) == "0");
+    assert(convertToBase(0, 16) == "0");
+
+    // Test case 3: Decimal number 15 to base 2 (binary)
+    assert(convertToBase(15, 2) == "1111");
+
+    // Test case 4: Decimal number 255 to base 8 (octal)
+    assert(convertToBase(255, 8) == "377");
+
+    // Test case 5: Invalid input - Negative decimal number
+    assert(convertToBase(-123, 10) == "Invalid input");
+
+    // Test case 6: Invalid input - Base less than 2
+    assert(convertToBase(123, 1) == "Invalid input");
+
+    // Test case 7: Large decimal number to base 16 (hexadecimal)
+    assert(convertToBase(987654321, 16) == "3ADE68B9");
+
+    // Test case 8: Decimal number 17 to base 2 (binary)
+    assert(convertToBase(17, 2) == "10001");
+}
+
+int main() {
+    testConvertToBase();
+    cout << "All test cases passed!" << endl;
+
+    return 0;
+}
